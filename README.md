@@ -1,5 +1,5 @@
 <p align="center">
-<img Height="1920" Width="1920" src="http://www.windchimestudio.top/wp-content/uploads/2023/03/wcsmcl.png"/>
+<img Height="200" Width="200" src="http://www.windchimestudio.top/wp-content/uploads/2023/03/wcsmcl.png"/>
 </p>
 
 <div align="center">
