@@ -1,0 +1,92 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cx="using:ControlX"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+             x:Class="WCSMCL.Views.LaunchItemView" Margin="10,0,10,10" >
+	<cx:OptionsDisplayItem Expands="True" 
+						   Description="{Binding State}" 
+						   Header="{Binding Title}" x:Name="main">
+		<cx:OptionsDisplayItem.Content>
+			<StackPanel IsVisible="{Binding IsLaunchOk}" Orientation="Vertical">
+				<Grid IsVisible="{Binding IsCanGoToConsole}" Margin="0">
+					<TextBlock FontFamily="Din Pro" VerticalAlignment="Center" Text="游戏日志输出："/>
+					<Grid HorizontalAlignment="Right" Width="550">
+						<Button Command="{Binding CreateOutputWindowAction}" Name="gamelog" Content="转至控制台" HorizontalAlignment="Right" IsTabStop="False"/>
+					</Grid>
+				</Grid>
+				<!--0,25,0,0-->
+				<Grid Margin="{Binding TimerMargin}">
+					<TextBlock FontFamily="Din Pro" VerticalAlignment="Center" Text="游戏已运行时间："/>
+					<Grid HorizontalAlignment="Right" Width="550">
+						<TextBlock Text="{Binding RunTime}" Name="time" TextAlignment="Right" HorizontalAlignment="Right"/>
+					</Grid>
+				</Grid>
+				
+				<Grid IsVisible="{Binding IsWindowsLoadOk}" Name="Close" Margin="0,25,0,0">
+					<TextBlock FontFamily="Din Pro" VerticalAlignment="Center" Text="强制结束游戏："/>
+                    <Button Command="{Binding GameKillAction}" Content="强制结束" Name="closegame" HorizontalAlignment="Right"/>
+				</Grid>
+				
+				<Grid Name="gameout" IsVisible="{Binding IsClose}" Margin="0,25,0,0">
+					<TextBlock FontFamily="Din Pro" VerticalAlignment="Center" Text="游戏崩溃："/>
+					<TextBlock Text="{Binding ExitCode}" Name="exitcode" HorizontalAlignment="Right"/>
+				</Grid>
+
+				<Grid IsVisible="False" Margin="0,25,0,0">
+					<TextBlock FontFamily="Din Pro" VerticalAlignment="Center" Text="导致游戏崩溃可能的原因："/>
+					<Button Command="{Binding GameKillAction}" Content="崩溃信息" HorizontalAlignment="Right">
+						<Button.Flyout>
+							<Flyout>
+								<StackPanel Spacing="10">
+									<TextBlock FontFamily="微软雅黑" FontWeight="Bold" Text="详细信息" FontSize="18"/>
+
+									<StackPanel Spacing="5">
+										<TextBlock FontFamily="微软雅黑" Text="原因：玩家手动触发调试崩溃" FontSize="14"/>
+										<TextBlock TextWrapping="WrapWithOverflow" MaxWidth="425" FontFamily="微软雅黑" Text="可能的解决方案：显然您的游戏没有任何问题，这是你自身的问题。" FontSize="14"/>
+									</StackPanel>
+								</StackPanel>
+							</Flyout>
+						</Button.Flyout>
+					</Button>							
+				</Grid>
+			</StackPanel>
+		</cx:OptionsDisplayItem.Content>
+		<cx:OptionsDisplayItem.ActionButton>
+			<Button Click="Button_Click">
+				<Button.Styles>
+					<Style Selector="Button">
+						<Setter Property="Height" Value="30"/>
+						<Setter Property="Width" Value="30"/>
+						<Setter Property="Background" Value="Transparent"/>
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate>
+									<Border x:Name="LayMain"
+											CornerRadius="4"
+											Background="{TemplateBinding Background}"
+										    HorizontalAlignment="Stretch"
+	                                        VerticalAlignment="Stretch">
+										<Border.Transitions>
+											<Transitions>
+												<BrushTransition  Property="Background" Duration="0:0:0.08"/>
+											</Transitions>
+										</Border.Transitions>
+										<ui:SymbolIcon Symbol="Dismiss" />
+									</Border>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+					</Style>
+					<Style Selector="Button:pointerover">
+						<Setter Property="Background" Value="#10FFFFFF"/>
+					</Style>
+					<Style Selector="Button:pressed">
+						<Setter Property="Background" Value="#00FFFFFF"/>
+					</Style>
+				</Button.Styles>
+			</Button>
+		</cx:OptionsDisplayItem.ActionButton>
+	</cx:OptionsDisplayItem>
+</UserControl>

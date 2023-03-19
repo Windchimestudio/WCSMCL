@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=WCSMCL
+Type=Application
+Terminal=false
+Exec=/usr/share/WCSMCL/WCSMCL
+Icon=/usr/share/icons/wcsmcl.png
+Categories=Game;ActionGame;AdventureGame;Simulation;
+Keywords=game;minecraft;launcher;mc;
+Comment=Next generation cross-platform Minecraft launcher
+Comment[zh_CN]=下一代跨平台 Minecraft 启动器

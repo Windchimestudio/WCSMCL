@@ -1,0 +1,114 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:wlc="using:WCSMCL.Modules.Cards"
+			 xmlns:card="using:ControlX"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+             x:Class="WCSMCL.Views.OtherView">
+	<ScrollViewer>
+		<StackPanel>
+			<card:OptionsDisplayItem Expands="True" Margin="10,20,10,0" Header="WCSMCL" Description="{Binding CurrentVersion}">
+				<!--<card:OptionsDisplayItem.Icon>
+					<ui:SymbolIcon Symbol="AlignLeftFilled"/>
+				</card:OptionsDisplayItem.Icon>-->
+				<card:OptionsDisplayItem.ActionButton>
+					<StackPanel Orientation="Horizontal" Spacing="15">
+						<ProgressBar Classes="Circle" IsIndeterminate="{Binding IsCheckVersion}"
+									 Height="22" Width="22"/>
+						<Button Command="{Binding Check}" Content="{Binding ButtonContent}"/>
+					</StackPanel>
+				</card:OptionsDisplayItem.ActionButton>
+				<card:OptionsDisplayItem.Content>
+					<StackPanel Orientation="Vertical" Spacing="10">
+						<StackPanel Orientation="Horizontal" Spacing="50">
+							<TextBlock Text="构建版本号"/>
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="Build "/>
+								<TextBlock Text="{Binding Version}"/>
+							</StackPanel>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="50">
+							<TextBlock Text="实际版本号"/>
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="{Binding VersionPrefix}"/>
+								<TextBlock Text="{Binding Version}"/>
+							</StackPanel>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="60">
+							<TextBlock Text="版权信息"/>
+							<TextBlock Text="© Wind Chime Studio(2021-2023) 保留所有权利"/>
+							<!--TextBlock Text="CopyRight Wind Chime Studio(2021-2023) 保留所有权利"/>-->
+						</StackPanel>
+						
+						<Button Command="{Binding NavigatedToStructureView}" Content="查看此版本的更新日志"/>
+					</StackPanel>
+				</card:OptionsDisplayItem.Content>
+			</card:OptionsDisplayItem>
+
+			<card:OptionsDisplayItem Expands="True" Margin="10,15,10,0" Header="Wind Chime Studio" Description="本启动器的开发团队">
+				<!--<card:OptionsDisplayItem.Icon>
+					<ui:SymbolIcon Symbol="People"/>
+				</card:OptionsDisplayItem.Icon>-->
+				<card:OptionsDisplayItem.Content>
+					<StackPanel Orientation="Vertical" Spacing="10">
+						<StackPanel Orientation="Horizontal" Spacing="50">
+							<TextBlock Text="前端开发"/>
+							<TextBlock Text="风铃最牛逼"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="50">
+							<TextBlock Text="后端开发"/>
+							<TextBlock Text="风铃最牛逼"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="35">
+							<TextBlock Text="跨平台编译"/>
+							<TextBlock Text="风铃最牛逼"/>
+						</StackPanel>
+						<!--StackPanel Orientation="Horizontal" Spacing="60">
+							<TextBlock Text="UI 审查"/>
+							<TextBlock Text="风铃最牛逼"/>
+						</StackPanel>-->
+						<StackPanel Orientation="Horizontal" Spacing="35">
+							<TextBlock Text="内部测试"/>
+							<TextBlock Text="海王马牛逼、彳木白"/>
+						</StackPanel>
+					</StackPanel>
+				</card:OptionsDisplayItem.Content>
+			</card:OptionsDisplayItem>
+
+			
+
+			<card:OptionsDisplayItem IsExpanded="True" Expands="True"
+									 Margin="10,15,10,10" Header="开源项目使用声明" Description="本启动器所使用的开源项目">
+				<!--<card:OptionsDisplayItem.Icon>
+					<ui:SymbolIcon Symbol="Page"/>
+				</card:OptionsDisplayItem.Icon>-->
+				<card:OptionsDisplayItem.Content>
+					<StackPanel HorizontalAlignment="Center">
+						<DockPanel>
+							<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Text="Avalonia"/>
+							<ui:HyperlinkButton Margin="10,10" DockPanel.Dock="Right" Content="https://github.com/AvaloniaUI/Avalonia" NavigateUri="https://github.com/AvaloniaUI/Avalonia"/>
+						</DockPanel>
+						<DockPanel>
+							<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Text="FluentAvaloniaUI"/>
+							<ui:HyperlinkButton Margin="10,10" DockPanel.Dock="Right" Content="https://github.com/amwx/FluentAvalonia" NavigateUri="https://github.com/amwx/FluentAvalonia"/>
+						</DockPanel>
+						<DockPanel>
+							<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Text="Natsurainko.FluentCore"/>
+							<ui:HyperlinkButton Margin="10,10" DockPanel.Dock="Right" Content="https://github.com/Xcube-Studio/Natsurainko.FluentCore" NavigateUri="https://github.com/Xcube-Studio/Natsurainko.FluentCore"/>
+						</DockPanel>
+						<DockPanel>
+							<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Text="Newtonsoft.Json"/>
+							<ui:HyperlinkButton Margin="10,10" DockPanel.Dock="Right" Content="https://www.newtonsoft.com/json" NavigateUri="https://www.newtonsoft.com/json"/>
+						</DockPanel>
+						<DockPanel>
+							<TextBlock VerticalAlignment="Center" DockPanel.Dock="Left" FontWeight="Bold" Text="WonderLabX核心"/>
+							<ui:HyperlinkButton Margin="10,10" DockPanel.Dock="Right" Content="https://github.com/Blessing-Studio/WonderLab" NavigateUri="https://github.com/Blessing-Studio/WonderLab"/>
+						</DockPanel>
+					</StackPanel>
+				</card:OptionsDisplayItem.Content>
+			</card:OptionsDisplayItem>
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>
