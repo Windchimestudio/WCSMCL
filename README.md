@@ -18,7 +18,7 @@ WCSMCL是您的下一代 Minecraft 启动器，基于C#语言编写，沿用了W
 
 ## 下载
 
-目前我们开放了Windows，MacOS，Linux的下载链接，你可以在 [这里](https://github.com/Blessing-Studio/WCSMCL/releases) 下载你想要的版本。
+目前我们开放了Windows，MacOS，Linux的下载链接，你可以在 [这里](https://github.com/Windchimestudio/WCSMCL/releases) 下载你想要的版本。
 你可以通过加入 [WCSMCL内测群](https://jq.qq.com/?_wv=1027&k=3xvzGixO) 来获取内测版本。
 
 ## 引用
